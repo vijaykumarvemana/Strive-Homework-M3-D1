@@ -202,23 +202,98 @@ console.log(angles(45))
 13)
 
 Create a function to find the index of the greatest element of a given array of integers
+*/
+ const indexOfMax = function(arrs) {
+    if (arrs.length === 0) {
+        return -1
+    }
+    let max = arrs[0]
+    let maxIndex = 0
 
+    for (let i = 1; i < arrs.length; i++) {
+        if (arrs[i] > max) {
+            maxIndex = i
+            max = arrs[i]
+        }
+    }
+
+    return maxIndex;
+}
+
+console.log(indexOfMax([1,7, 67,690,276,23456]))
+/*
 14)
 
-Create a function to get the largest even number from an array of integers.
+Create a function to get the largest even number from an array of integers.*/
+
+const maxEvenArray = function(earr1){
+    
+  earr1.sort( function(a, b){
+      return b- a
+    }
+  )
+
+  for (let i = 0; i < earr1.length; i++) {
+    if (earr1[i] % 2 == 0)
+      return earr1[i]
+    }
+}
+console.log(maxEvenArray([56, 44, 22, 675, 24, 46]))
+/*
 
 16)
 
 Create a function to check from two given integers, whether one is positive and another one is negative.
+*/
+const positive_negative = function(x, y){
+  if ((x < 0 && y > 0) || x > 0 && y < 0) 
+  {
+    return true
+  }
+  else 
+  {
+    return false
+  }
+}
+console.log(positive_negative(5, 6))
+console.log(positive_negative(-4, 2))
+console.log(positive_negative(2, -4))
+console.log(positive_negative(-7, -9))
 
+/*
 17)
 
 Create a function to create new string with first 3 characters are in lower case and the others in upper case. If the string length is less than 3 convert all the characters in upper case. 
+*/
+const upperLowerCase = function(strul){
+    if (strul.length < 3) {
+        return strul.toUpperCase();
+      }
+      part1 = (strul.substring(0, 3)).toLowerCase();
+      part2 = strul.substring(3, strul.length);  
+      return part1 + part2;
+}
 
+console.log(upperLowerCase("hi"))
+console.log(upperLowerCase("STRIVERS"))
+console.log(upperLowerCase("STRINGS"))
+/*
 18)
 
 Create a function to calculate the sum of the two given integers, If the sum is in the range 50..80 return 65 other wise return 80.
+*/
 
+const sumOfRangeInterger = function(inte1, inte2){
+    let sum = inte1 + inte2
+    if (sum >=50 && sum <= 80 ){
+        return 65
+    } else{
+        return 80
+    }
+}
+console.log(sumOfRangeInterger(57, 4))
+console.log(sumOfRangeInterger(57, 50))
+/*
 19)
 
 Create a function to convert a number to a string, the contents of which depend on the number's factors. Follow next example:
@@ -234,8 +309,45 @@ this would be a simple "Stefano".
 this would be a "DiegoRiccardo".
 34 has four factors: 1, 2, 17, and 34.
 this would be "34".
+*/
+const factors = function(int){
+
+    let array = []
+    for(let i = 1; i <= int; i++) {
+
+        // check if number is a factor
+        if(int % i == 0) {
+            array.push(i)
+        }
+}
+console.log(array)
+    for(let i=0; i < array.length; i++ ){
+        if(array.indexOf(i) !== 3 || array.indexOf(i) !== 5){
+            return "DiegoRiccardo"
+    }else if(array.indexOf(i) !== 3){
+        return "Diego"
+    }else if(array.indexOf(i) !== 5){
+    return "Riccardo"
+}
+}
+}
+
+console.log(factors(28))
+
+
+
+/*
+
 
 20)
-Create a function that given a phrase returns its acronym, like British Broadcasting Corporation returns BBC
+Create a function that given a phrase returns its acronym, like British Broadcasting Corporation returns BBC*/
+const abbrev_name = function (str1) {
+    var split_names = str1.trim().split(" ");
+    if (split_names.length > 1) {
+        return (split_names[0].charAt(0) + " " + split_names[1].charAt(0) + " " + split_names[2].charAt(0));
+    }
+    return split_names[0];
+};
+console.log(abbrev_name("British Broadcasting Corporation"));
 
-*/
+
