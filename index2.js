@@ -26,6 +26,7 @@ const maxChar = function(strr) {
         maxChar = char;
       }
     }
+}
 console.log(maxChar("abcccccccccccd"))
 /* 2) ANAGRAMS
 
